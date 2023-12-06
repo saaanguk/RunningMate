@@ -10,4 +10,6 @@ public interface MateBoardReplyRepository extends JpaRepository<MateBoardReply, 
 
 	List<MateBoardReply> findByBoardidx(Long idx);
 
+	void deleteByUsername(String username);
+
 }

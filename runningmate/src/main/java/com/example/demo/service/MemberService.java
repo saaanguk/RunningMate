@@ -14,6 +14,7 @@ import com.example.demo.DTO.PasswordDTO;
 import com.example.demo.entity.Member;
 import com.example.demo.repository.BoardRepository;
 import com.example.demo.repository.FriendListRepository;
+import com.example.demo.repository.MateBoardReplyRepository;
 import com.example.demo.repository.Member1Repository;
 import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.MessageRepository;
@@ -31,6 +32,7 @@ public class MemberService {
 	private final MessageRepository messageRepository;
 	private final BCryptPasswordEncoder bCryptPasswordEncoder;
 	private final Member1Repository member1Repository;
+	private final MateBoardReplyRepository mateboardrepository;
 
     public Member saveMember(Member member){
         validateDubplicateMember(member);
@@ -72,6 +74,7 @@ public class MemberService {
 		friendListRepository.deleteByFriendemail(useremail);
 		friendListRepository.deleteByMyemail(useremail);
 		boardRepository.deleteByUsername(username);
+		mateboardrepository.deleteByUsername(username);
 		messageRepository.deleteByReceiveemail(useremail);
 		messageRepository.deleteBySendemail(useremail);
 		memberRepository.deleteById(idx);

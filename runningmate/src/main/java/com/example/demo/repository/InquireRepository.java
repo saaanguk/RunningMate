@@ -8,7 +8,7 @@ import com.example.demo.entity.Inquire;
 
 public interface InquireRepository extends JpaRepository<Inquire, Long> {
 
-	Page<Inquire> findByUseremailOrderByIdxDesc(PageRequest of, String currentUsername);
+	Page<Inquire> findByUsernameOrderByIdxDesc(String currentUsername, PageRequest of);
 
 	Long countByUseremail(String myname);
 

@@ -26,17 +26,21 @@ public class Inquire {
 	@GeneratedValue
 	private String useremail;
 	
+	@GeneratedValue
+	private String username;
+	
 	@ColumnDefault("1")
 	private int finish;
 	
 	private LocalDateTime reg_date;
 	
 	@Builder
-	public Inquire(Long idx, String title, String content, String useremail, int finish) {
+	public Inquire(Long idx, String title, String content, String useremail, int finish, String username) {
 		this.idx = idx;
 		this.content = content;
 		this.title = title;
 		this.useremail = useremail;
+		this.username = username;
 		this.finish = finish;
 		this.reg_date = LocalDateTime.now();
 		

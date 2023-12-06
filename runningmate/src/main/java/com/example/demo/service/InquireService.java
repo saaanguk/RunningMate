@@ -32,7 +32,7 @@ public class InquireService {
 	
 	@Transactional
 	public List<InquireDTO> getInquirelist(String currentUsername, Integer pageNum) {
-		Page<Inquire> page = inquireRepository.findByUseremailOrderByIdxDesc(PageRequest.of(pageNum -1, PAGE_POST_COUNT), currentUsername);
+		Page<Inquire> page = inquireRepository.findByUsernameOrderByIdxDesc(currentUsername, PageRequest.of(pageNum -1, PAGE_POST_COUNT));
 		
 		List<Inquire> inquire = page.getContent(); 
 		List<InquireDTO> inquireDtoList = new ArrayList<>();

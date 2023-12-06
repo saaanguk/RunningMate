@@ -65,6 +65,7 @@
                                         </div>
                                     </div>
                                     <input type="hidden" name="useremail" th:value="${#authentication.principal.userId}">
+                                    <input type="hidden" name="username" th:value="${#authentication.principal.username}">
                                     <div class="col-12">
                                         <div class="form-group message">
                                             <textarea name="content" placeholder="문제 내용"></textarea>
